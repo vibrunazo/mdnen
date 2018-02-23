@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Change MDN laguage to en-US
 // @namespace    https://github.com/vibrunazo/mdnen
-// @version      0.1
+// @version      0.2
 // @description  Changes the url on MDN from pt-BR to en-US
 // @author       vib
 // @updateURL    https://github.com/vibrunazo/mdnen
@@ -15,9 +15,8 @@
 
     // Your code here...
     const url = window.location;
-    let url2 = '' + url;
-    url2 = url2.replace('pt-BR', 'en-US');
-
+    let el = document.querySelector('[data-locale="en-US"]');
+    let url2 = el.href;
     console.log('redirecting from ' + url + ' to ' + url2);
     window.location.replace(url2);
 })();
